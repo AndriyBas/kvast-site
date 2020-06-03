@@ -49,6 +49,10 @@ table {
 
 /* MY STYLES */
 
+/* * {
+    outline: 1px solid red
+} */
+
 html {
     scroll-behavior: smooth;
 }
@@ -84,7 +88,7 @@ body {
     justify-content: space-between;
 }
 
-.page-header {
+header {
     height: 550px;
     background: url("../img/wheat-back.jpg") no-repeat;
     background-color: black;
@@ -97,30 +101,27 @@ body {
     height: 76px;
 }
 
-.header-menu {
+nav {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px 0 20px 0;
     display: flex;
 }
 
-.header-menu a {
+nav a {
     text-decoration: none;
     color: white;
     text-transform: uppercase;
     font-weight: bold;
-}
-
-.header-menu a:hover, 
-.header-menu a:active {
-    color: #FFCB78;
-}
-
-.header-menu li {
     margin-left: 53px;
 }
 
-.header-menu li:first-child {
+nav a:hover, 
+nav a:active {
+    color: #FFCB78;
+}
+
+nav a:first-child {
     margin-left: 0;
 }
 
@@ -649,12 +650,12 @@ body {
 
  /* FOOTER  */
 
-.page-footer {
+footer {
     background-color: black;
     padding-bottom: 42px;
 }
 
-.page-footer .header-logo {
+footer .header-logo {
     margin-left: -58px;
 }
 
@@ -733,7 +734,7 @@ body {
     color: #CAB7A2;
 }
 
-.footer-author b {
+.footer-author small {
     font-weight: bold;
     padding-left: 30px;
 }
