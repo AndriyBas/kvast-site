@@ -54,8 +54,6 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
     min-width: 1035px;
     font-family: "Arial", sans-serif;
     font-size: 16px;
@@ -70,6 +68,7 @@ body {
 }
 
 .clearfix::after {
+    /* class to clear float items */
     display: table;
     content: "";
     clear: both;
@@ -79,6 +78,9 @@ body {
 
 .header-top {
     padding-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .page-header {
@@ -92,17 +94,13 @@ body {
 .header-logo {
     width: 140px;
     height: 76px;
-    float: left;
 }
 
 .header-menu {
-    list-style: none;
-    float: right;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 20px 0 20px 0;
-    margin: 0;
-    margin-top: 7px;
+    display: flex;
 }
 
 .header-menu a {
@@ -118,7 +116,6 @@ body {
 }
 
 .header-menu li {
-    float: left;
     margin-left: 53px;
 }
 
@@ -137,76 +134,72 @@ body {
 
  /* NEW ITEMS */
 
- .section-header {
-    margin: 0;
+.section-header {
     padding: 86px 0 80px 0;
     text-transform: uppercase;
     font-size: 40px;
     font-weight: bold;
     line-height: 40px;
     color: black;
- }
+}
 
- .new-item {
+.new-items-list {
+    display: flex;
+    align-items: center;
+}
+
+.new-item {
     position: relative;
     width: 339px;
     border-right: 1px solid #E5E5E5;
     padding: 12px 25px 0 34px;
- }
+}
 
- .new-item-left {
+.new-item:first-of-type {
     border-left: 1px solid #E5E5E5;
-    float: left;
- }
+}
 
- .new-item-right {
-    float: right;
- }
-
- .new-item h3 {
+.new-item h3 {
     text-transform: uppercase;
     font-size: 40px;
     line-height: 40px;
     color: black;
-    margin: 0;
-    padding: 0;
     font-weight: bold;
-    /* padding: 12px 0 37px 37px; */
- }
+}
 
- .new-item-info {
+.new-item-info {
     position: absolute;
     right: 25px;
     top: 80px;
     width: 148px;
- }
+}
 
- .new-item-info table {
+.new-item-info table {
     width: 100%;
     border-collapse: collapse;
     line-height: 40px;
- }
+}
 
- .new-item-info td {
+.new-item-info td {
     padding: 0 10px;
     border: 1px solid #E5E5E5;
     color: black;
     text-transform: uppercase;
     font-weight: bold;
- }
+}
 
- .new-item-info p {
-     font-size: 14px;
- }
+.new-item-info p {
+    padding-top: 9px;
+    font-size: 14px;
+    line-height: 24px;
+}
 
- .new-item img {
+.new-item img {
     margin-top: 43px;
- }
+}
 
 .new-item-desc {
     line-height: 30px;
-    padding: 0;
-    margin: 0;
 }
 
 .more-info-bottom {
@@ -219,6 +212,7 @@ body {
 
 .new-item-price {
     margin-left: 25px;
+    font-weight: bold;
 }
 
  /* BUTTONS */
@@ -253,7 +247,6 @@ body {
     padding: 16px 16px 14px 16px;
     background-color: #834700;
     font-weight: bold;
-
  }
 
  .btn-dark:hover,
@@ -286,32 +279,29 @@ body {
 
  /* BENEFITS  */
 
- .container-big {
+.container-big {
     width: 1015px;
     margin: 0 auto;
- }
+}
 
- .page-benefits {
+.page-benefits {
     background-color: #FFCB78;
     padding: 80px 0 100px 0;
     margin-top: 100px;
- }
+    display: flex;
+    align-items: center;
+}
 
- .page-benefits ul {
+.page-benefits .benefit {
     margin: 0;
-    padding: 0;
-    list-style: none;
- }
-
- .page-benefits .benefit {
-    width: 231px; 
-    float: left;
+    width: 228px; 
+    display: inline-block;
     border-left: 1px solid #E5B66C;
     padding: 107px 80px 0 80px;
     position: relative;
- }
+}
 
- .page-benefits .benefit::before {
+.page-benefits .benefit::before {
     content: "";
     position: absolute;
     left: 0;
@@ -320,9 +310,9 @@ body {
     width: 63px;
     background-image: url('../img/icon-brew.png');
     background-repeat: no-repeat;
- }
+}
 
- .page-benefits .benefit:nth-child(2)::before {
+.page-benefits .benefit:nth-child(2)::before {
     left: 80px;
     background-image: url('../img/icon-matreshka.png'); 
 }
@@ -338,24 +328,20 @@ body {
  }
 
  .page-benefits .benefit:last-child {
-     padding-right: 0;
+    padding-right: 0;
  }
 
  .page-benefits .benefit-name {
-     text-transform: uppercase;
-     margin: 0;
-     padding: 0;
-     font-weight: bold;
-     font-size: 20px;
-     line-height: 20px;
-     color: black;
-     margin-bottom: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+    color: black;
+    margin-bottom: 17px;
  }
 
  .page-benefits .benefit-desc {
-     margin: 0;
-     padding: 0;
-     line-height: 30px;
+    line-height: 30px;
  }
 
   /* HISTORY */
@@ -366,10 +352,12 @@ body {
 
 .history-list dt {
     margin-bottom: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .history-title {
-    float: left;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
@@ -377,7 +365,6 @@ body {
 }
 
 .history-source {
-    float: right;
     font-style: italic;
 }
 
@@ -389,23 +376,20 @@ body {
     color: #6A3900;
 }
 
-
 .history-source a:active {
     color: #CAB7A2;
 }
 
-.history-img {
-    float: right;
+.history-list dd {
+    margin-bottom: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .history-desc {
     line-height: 30px;
     width: 510px;
-    float: left;
-}
-
-.history-list dd {
-    margin-bottom: 72px;
 }
 
  /* PRESS  */
@@ -434,7 +418,6 @@ body {
     left: -105px;
     top: 7px;
     background: url("../img/quotes.png") no-repeat;
-    /* background-color: red; */
 }
 
 .press-bottom-info {
@@ -667,16 +650,11 @@ body {
 
 .page-footer {
     background-color: black;
-    padding-top: 60px;
     padding-bottom: 42px;
 }
 
 .page-footer .header-logo {
-    margin-left: 50px;
-}
-
-.page-footer .header-menu {
-    margin-right: 108px;
+    margin-left: -58px;
 }
 
 .footer-bottom {
@@ -742,7 +720,7 @@ body {
 
 .footer-copyright {
     padding-top: 18px;
-    padding-left: 76px; 
+    padding-left: 76px;
     color: #989898;
     float: left;
     width: 225px;
@@ -756,11 +734,6 @@ body {
     float: right;
     color: #989898;
 }
-
-/* .footer-author img {
-    width: 75px;
-    height: 70px;
-} */
 
 .footer-author a {
     text-decoration: none;
