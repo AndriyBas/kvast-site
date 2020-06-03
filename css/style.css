@@ -68,6 +68,7 @@ body {
 }
 
 .clearfix::after {
+    /* DEPRECATED, not using any more  */
     /* class to clear float items */
     display: table;
     content: "";
@@ -659,16 +660,9 @@ body {
 
 .footer-bottom {
     margin-top: 46px;
-    height: 77px;
-    /* display: inline-block; */
-}
-
-.footer-bottom div {
-    /* display: inline-block; */
-}
-
-.footer-social {
-    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .social-link {
@@ -685,7 +679,7 @@ body {
 .social-link:not(:first-child) {
     /* TODO: how to border-collapse them???  */
     /* margin-left: -1px; */
-} 
+}
 
 .social-link:hover {
     border-color: #5F5037;
@@ -708,36 +702,30 @@ body {
     background-image: url('../img/icon-vk.png');
 }
 
-/* .footer-copy-author { */
-    /* margin-left: 76px; */
-    /* color: #989898; */
-    /* height: 77px; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: space-between; */
-    /* text-align: center; */
-/* } */
+.footer-social-copy {
+    display: flex;
+    align-items: center;
+}
 
 .footer-copyright {
-    padding-top: 18px;
     padding-left: 76px;
     color: #989898;
-    float: left;
     width: 225px;
-    /* display: inline-block; */
+    display: inline-block;
     font-size: 14px;
     line-height: 20px;
-    /* vertical-align: middle; */
 }
 
 .footer-author {
-    float: right;
+    display: flex;
+    align-items: center;
     color: #989898;
 }
 
 .footer-author a {
     text-decoration: none;
     color: inherit;
+    font-weight: normal;
 }
 
 .footer-author a:hover,
@@ -752,11 +740,4 @@ body {
 
 .social-academy {
     background-image: url('../img/htmlacademy.png');
-}
-
-.dev-text {
-    /* How should I center this text???? Why it always aligned to the bottom??? */
-    display: inline-block;
-    height: 77px;
-    vertical-align: middle;
 }
